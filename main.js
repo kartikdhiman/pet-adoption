@@ -44,6 +44,10 @@ function handleFilterClick(e) {
 	e.preventDefault();
 	let target = e.target;
 
+	if (e.target.classList.contains("only-large-screen")) {
+		target = e.target.closest("a");
+	}
+
 	filterBtns.forEach(btn => btn.classList.remove("active"));
 	target.classList.add("active");
 

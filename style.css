@@ -21,12 +21,12 @@ body {
   margin-bottom: 10px;
   & h1 {
     font-weight: normal;
-    font-size: 7rem;
+    font-size: 3rem;
     margin: 0;
   }
   & h2 {
     font-weight: normal;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     margin: 0;
   }
   &:before {
@@ -83,13 +83,12 @@ nav {
 }
 
 .animals {
-  max-width: 700px;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 
 .animal-card {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 1fr;
   margin-bottom: 30px;
   background-color: var(--animal-card-color);
   border-radius: 16px;
@@ -139,5 +138,33 @@ nav {
   background: linear-gradient(#d147d1, #702acb);
   &:hover {
     background: linear-gradient(#e353a7, #d82eb9);
+  }
+}
+
+.only-large-screen {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    & h1 {
+      font-size: 7rem;
+    }
+    & h2 {
+      font-size: 1.7rem;
+    }
+  }
+
+  .animal-card {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .only-large-screen {
+    display: inline;
+  }
+
+  .animals {
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
