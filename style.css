@@ -79,6 +79,7 @@ nav {
 .animal-card {
   display: grid;
   grid-template-columns: 200px 1fr;
+  margin-bottom: 30px;
   background-color: var(--animal-card-color);
   border-radius: 16px;
   overflow: hidden;
