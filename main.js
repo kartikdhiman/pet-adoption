@@ -34,3 +34,35 @@ function decideAgeText(age) {
 	}
 	return age > 1 ? `${age} years old` : "1 year old";
 }
+
+const filterBtns = document.querySelectorAll("nav a");
+filterBtns.forEach(btn => {
+	btn.addEventListener("click", e => handleFilterClick(e));
+});
+
+function handleFilterClick(e) {
+	e.preventDefault();
+	let target = e.target;
+
+	filterBtns.forEach(btn => btn.classList.remove("active"));
+	target.classList.add("active");
+
+	filterPets(target.dataset.filter);
+}
+
+function filterPets(species) {
+	const allPets = document.querySelectorAll(".animal-card");
+	if (species === "all") {
+		allPets.forEach(pet => {
+			pet.style.display = "";
+		});
+	} else {
+		allPets.forEach(pet => {
+			if (pet.querySelector(".species").textContent == species) {
+				pet.style.display = "";
+			} else {
+				pet.style.display = "none";
+			}
+		});
+	}
+}

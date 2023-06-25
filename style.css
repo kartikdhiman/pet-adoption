@@ -69,6 +69,17 @@ nav {
     text-decoration: none;
     color: var(--base-color);
   }
+  & a:hover {
+    background-color: #e1a2ff;
+  }
+  & .active {
+    background-color: var(--base-color);
+    color: #fff;
+  }
+  & .active:hover {
+    background-color: var(--base-color);
+    cursor: default;
+  }
 }
 
 .animals {
